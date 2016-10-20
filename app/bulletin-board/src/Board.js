@@ -76,6 +76,7 @@ var Board = React.createClass({
   render() {
     return (
       <div className='board'>
+      <div className="heading"><h1>Paul Kenneth Kent Board</h1></div>
           {this.state.notes.map(this.eachNote)}
           <button onClick={() => this.add('New Note')}>+</button>
       </div>)

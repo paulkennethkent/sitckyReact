@@ -10,7 +10,7 @@ var Note = React.createClass({
     this.style = {
       right: this.randomBetween(0, window.innerWidth - 150, 'px'),
       top: this.randomBetween(0, window.innerHeight - 150, 'px'),
-      backgroundColor: this.colourBetween(1000),
+      background: this.colourBetween(),
     }
   },
   componentDidUpdate() {
@@ -20,13 +20,15 @@ var Note = React.createClass({
     }
   },
   shouldComponentUpdate(nextProps, nextState) {
-    return this.props.children != nextProps.children || this.state !== nextState
+    return this.props.children !== nextProps.children || this.state !== nextState
   },
   randomBetween(x,y,s) {
-    return(x + Math.ceil(Math.random() * (y-x))) + s
+    return(x + Math.floor(Math.random() * (y-x))) + s
   },
   colourBetween(x) {
-    return('#' + Math.ceil(Math.random() * x ))
+    var a = ['#00ff00', '#ffff00', '#cc00cc', '#3366ff']
+    var randomValue = a[Math.floor(a.length * Math.random())]
+    return randomValue
   },
   edit() {
     this.setState({editing : true})

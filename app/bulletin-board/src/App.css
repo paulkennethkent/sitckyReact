@@ -20,9 +20,11 @@ div.heading {
 }
 
 div.board {
-  background-color: 'brown';
+  background-color: 'white';
   width: 100%;
-  background: #eab92d;
+  background: #00000;
+  border: 10px solid grey
+
 }
 
 div.note {
